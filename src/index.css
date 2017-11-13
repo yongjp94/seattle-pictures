@@ -1,3 +1,29 @@
+
+#react-root, article, div, footer, header, main, nav, section {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -23,6 +49,8 @@ ul {
   -webkit-padding-start: 40px;
 }
 
+
+
 a, abbr, acronym, address, applet, article, aside, audio, 
 b, big, blockquote, body, canvas, caption, center, cite, code, 
 dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, 
@@ -42,6 +70,9 @@ ol, ul {
   list-style: none;
 }
 
+li {
+  padding-right: 12px;
+}
 
 
 a, a:visited {
@@ -60,23 +91,37 @@ a, a:visited {
   height: 77px;
   -webkit-box-align: center;
   align-items: center;
+  display: flex;
 }
 
 .navbar-inner {
   height: 77px;
   padding: 26px 40px;
   padding-left: 40px;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-direction: row;
   -webkit-box-pack: center;
-  justify-content: center;
   align-items: center;
   max-width: 1010px;
   transition: height .2s ease-in-out;
   width: 100%;
   flex-shrink: 0;
+}
+
+.nav-wrap {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-box-align: center;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transition: height .2s ease-in-out;
+  height: 77px;
 }
 
 .navbar-left {
@@ -85,6 +130,8 @@ a, a:visited {
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  align-self: center;
+  flex-grow: 1;
 }
 
 .navbar-center {
@@ -92,20 +139,36 @@ a, a:visited {
   min-width: 125px;
   width: 215px;
   height: 28px;
+  align-self: center;
+  flex-grow: 2;
 }
 
 .navbar-right {
   align-content: center;
   align-items: center;
+  align-self: center;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
   flex-wrap: wrap;
   -webkit-box-flex: 1;
-  flex: 1 0 0%;
   -webkit-box-pack: end;
   justify-content: flex-end;
+  flex-grow: 1;
+
+}
+
+.menu {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-left: 24px;
+  white-space: nowrap;
+  justify-content: space-around;
 }
 
 .searchbox {
@@ -117,7 +180,7 @@ a, a:visited {
   padding: 3px 10px 3px 26px;
   z-index: 2;
   height: 100%;
-  width: 100%;
+  width: 60%;
 }
 
 .main {
@@ -130,6 +193,7 @@ a, a:visited {
 
 .content {
   -webkit-box-align: stretch;
+  top: 100px;
   align-items: stretch;
   border: 0 solid #000;
   display: flex;
@@ -146,6 +210,7 @@ a, a:visited {
 }
 
 .main-header {
+  display: flex;
   margin-bottom: 44px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -183,10 +248,10 @@ section.header-right {
 }
 
 div.top-row {
+  display: flex;
   flex-shrink: 1;
   min-width: 0;
-  -webkit-box-align: center;
-  align-items: center;
+  align-items: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
@@ -202,6 +267,7 @@ ul.stats {
 
 div.bottom-row {
   display: block;
+  text-align: left;
 }
 
 .username {
@@ -211,29 +277,22 @@ div.bottom-row {
 }
 
 .gallery-row {
-  -webkit-box-align: stretch;
-  align-items: stretch;
-  border: 0 solid #000;
-  box-sizing: border-box;
   display: flex;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-  position: relative;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .gallery-card {
   display: block;
   position: relative;
-  width: 100%;
   -webkit-box-flex: 1;
   flex: 1 0 0%;
 }
 
-.gallery-image-placeholder {
+.gallery-image-wrapper {
   background-color: #efefef;
   display: block;
   width: 100%;
@@ -242,16 +301,14 @@ div.bottom-row {
 .gallery-image-slot {
   display: block;
   overflow: hidden;
-  padding-bottom: 100%;
 }
 
 .gallery-image {
+  width: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  height: 100%;
   user-select: none;
-  width: 100%;
 }
 
 .gallery-stat {
@@ -387,3 +444,49 @@ span.trademark {
     margin-right: 16px;
   }
 }
+
+.icon {
+  background-repeat: no-repeat;
+}
+
+.home-icon {
+  background-position: -177px 0;
+  height: 35px;
+  width: 176px;
+}
+
+.instagram-icon {
+  background-position: -312px -286px;
+  background-size: 395px 371px;
+  height: 30px;
+  width: 30px;
+}
+
+.explore-icon {
+  background-position: -387px -104px;
+  background-size: 395px 371px;
+  height: 24px;
+  width: 24px;
+}
+
+.heart-icon {
+  background-position: -125px -347px;
+  background-size: 395px 371px;
+  height: 24px;
+  width: 24px;
+}
+
+.profile-icon {
+  background-position: -287px -179px;
+  background-size: 395px 371px;
+  height: 24px;
+  width: 24px;
+}
+
+.comment-icon {
+  background-position: -353px -176px;
+  background-size: 395px 371px;
+  height: 24px;
+  width: 24px;
+}
+
