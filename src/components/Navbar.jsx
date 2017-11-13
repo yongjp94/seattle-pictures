@@ -9,11 +9,11 @@ export default class Navbar extends Component {
             <div className="navbar-inner">
                 <NavbarLeft>
                     <div>
-                        <a href="#">Instagram Home</a>
+                        <a href="#">Instagram</a>
                     </div>
                 </NavbarLeft>
                 <NavbarCenter>
-                    <input className="searchbox" />
+                    <input placeholder="Search" className="searchbox" />
                 </NavbarCenter>
                 <NavbarRight>
                     <div className="menu">

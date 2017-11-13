@@ -28,6 +28,31 @@
   to { transform: rotate(360deg); }
 }
 
+#react-root, article, div, footer, header, main, nav, section {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 0 solid #000;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -53,6 +78,8 @@ ul {
   -webkit-padding-start: 40px;
 }
 
+
+
 a, abbr, acronym, address, applet, article, aside, audio, 
 b, big, blockquote, body, canvas, caption, center, cite, code, 
 dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, 
@@ -72,6 +99,9 @@ ol, ul {
   list-style: none;
 }
 
+li {
+  padding-right: 12px;
+}
 
 
 a, a:visited {
@@ -192,6 +222,7 @@ a, a:visited {
 
 .content {
   -webkit-box-align: stretch;
+  top: 100px;
   align-items: stretch;
   border: 0 solid #000;
   display: flex;
@@ -208,6 +239,7 @@ a, a:visited {
 }
 
 .main-header {
+  display: flex;
   margin-bottom: 44px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -245,10 +277,10 @@ section.header-right {
 }
 
 div.top-row {
+  display: flex;
   flex-shrink: 1;
   min-width: 0;
-  -webkit-box-align: center;
-  align-items: center;
+  align-items: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
@@ -264,6 +296,7 @@ ul.stats {
 
 div.bottom-row {
   display: block;
+  text-align: left;
 }
 
 .username {
@@ -273,29 +306,22 @@ div.bottom-row {
 }
 
 .gallery-row {
-  -webkit-box-align: stretch;
-  align-items: stretch;
-  border: 0 solid #000;
-  box-sizing: border-box;
   display: flex;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-  position: relative;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 .gallery-card {
   display: block;
   position: relative;
-  width: 100%;
   -webkit-box-flex: 1;
   flex: 1 0 0%;
 }
 
-.gallery-image-placeholder {
+.gallery-image-wrapper {
   background-color: #efefef;
   display: block;
   width: 100%;
@@ -304,16 +330,14 @@ div.bottom-row {
 .gallery-image-slot {
   display: block;
   overflow: hidden;
-  padding-bottom: 100%;
 }
 
 .gallery-image {
+  width: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  height: 100%;
   user-select: none;
-  width: 100%;
 }
 
 .gallery-stat {

@@ -1,8 +1,10 @@
-var profile = {
+const profile = {
     id: 1,
     name: "Seattle",
     username: "seattle.city",
-    profileUrl: "https://scontent-sea1-1.cdninstagram.com/t51.2885-19/915605_297004590476746_1110641249_a.jpg",
+    followers: "128k",
+    following: "7468",
+    pictureUrl: "https://scontent-sea1-1.cdninstagram.com/t51.2885-19/915605_297004590476746_1110641249_a.jpg",
     description: "Follow us to discover all there is to know about the amazing city of Seattle! This page belongs to CityGramMedia.",
     posts: {
         size: 915,
