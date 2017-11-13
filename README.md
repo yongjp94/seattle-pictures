@@ -16,11 +16,11 @@ It does not use any icons since the official icons are trademarked.
 
 ## Components
 ### Navbar
-The navigation bar is more challening than you think! It contains a hierarchy that leads to 8 components
+The navigation bar is more challening than you think! It contains a hierarchy that leads to 8 components. Try to divide elements like this into different sections or groups.
 ### Content
 The content view includes the profile header as well as the gallery. This will be the most challenging part.
 ### Footer
-The Footer also consists of many elements.
+The Footer also consists of many elements. It has a menu as well as a trademark section.
 
 ## Modular Components
 Think of each of your component as lego blocks. Some are the foundation on which other blocks stand on, while some are purely presentational.
